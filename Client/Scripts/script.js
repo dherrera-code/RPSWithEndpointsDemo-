@@ -18,7 +18,7 @@ let aTies = 0;
 // Change this to our API endpoint that will return a random moveas a string
 // Example options your API should return 'rock' , 'paper', and 'scissors'
 // Create a variable to hold our url
-const aCpuApiUrl = "https://rpsdemov1-bad6e5b0eff8bxdc.westus3-01.azurewebsites.net/api/rps/rps";
+const aCpuApiUrl = "https://rps-endpoint-demodh-a7d6gmg6f3c4cwgj.westus3-01.azurewebsites.net/api/cpuchoice";
 
 /// --------------- DOM References --------------------------///
 

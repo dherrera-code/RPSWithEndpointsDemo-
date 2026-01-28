@@ -9,7 +9,19 @@ builder.Services.AddControllers();
 builder.Services.AddOpenApi();
 builder.Services.AddScoped<CpuChoiceService>();
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("Client", policy =>
+    {   //Links to your front-end to grant permission to access the API!, Can specify your local or hosted websites!
+        policy.WithOrigins("http://localhost:5500","http://127.0.0.1:5500","https://wonderful-stone-0eb28261e.4.azurestaticapps.net/")
+        .AllowAnyHeader()
+        .AllowAnyMethod();
+    });
+});
+// "Client" is refering toward the name of the frontEnd you need to have access to the API!
+
 var app = builder.Build();
+app.UseCors("Client");
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
